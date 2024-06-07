@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with JohnDoe landing page.">
+    <meta name="author" content="Devcrud">
+    <title>JohnDoe Landing page | Free Bootstrap 4.3.x landing page</title>
+
+    {% load static %}
+
+    <!-- font icons -->
+    <link rel="stylesheet" href="{% static 'assets/vendors/themify-icons/css/themify-icons.css' %}">
+    <!-- Bootstrap + JohnDoe main styles -->
+    <link rel="stylesheet" href="{% static 'assets/css/johndoe.css' %}">
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white" data-spy="affix" data-offset-top="510">
+    <div class="container">
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse mt-sm-20 navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="{% url 'home'%}" class="nav-link"> Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'about'%}" class="nav-link">Materiales</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'user'%}" class="nav-link">Mi cuenta</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav brand">
+                <li class="brand-txt">
+                    <h5 class="brand-title">Bot zilla</h5>
+                    <div class="brand-subtitle">Grupo 4 | PIS</div>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="{% url 'app' %}" class="nav-link">APP</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'estadisticas'%}" class="nav-link">Estadisticas</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'account:login' %}" class="nav-link">Iniciar sesion</a>
+                </li>
+                <li class="nav-item last-item">
+                    <a href="{% url 'account:register' %}" class="nav-link">Registrase</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<h1>Dashboard de {{ request.user.username }}</h1>
+<aside>
+    <ul>
+        <li><a href="#historial">Historial</a></li>
+        <li><a href="#perfil">Perfil</a></li>
+        <li><a href="#dispositivos">Dispositivos</a></li>
+    </ul>
+    <section id="historial">
+        <h2>Historial reciente</h2>
+        <p>Sesion 1</p>
+        <p>Sesion 2</p>
+        <p>Sesion 3</p>
+    </section>
+</aside>

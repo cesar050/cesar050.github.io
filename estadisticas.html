@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with JohnDoe landing page.">
+    <meta name="author" content="Devcrud">
+    <title>JohnDoe Landing page | Free Bootstrap 4.3.x landing page</title>
+
+    {% load static %}
+
+    <!-- font icons -->
+    <link rel="stylesheet" href="{% static 'assets/vendors/themify-icons/css/themify-icons.css' %}">
+    <!-- Bootstrap + JohnDoe main styles -->
+    <link rel="stylesheet" href="{% static 'assets/css/johndoe.css' %}">
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white" data-spy="affix" data-offset-top="510">
+    <div class="container">
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse mt-sm-20 navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="{% url 'home'%}" class="nav-link"> Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'about'%}" class="nav-link">Materiales</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'user'%}" class="nav-link">Mi cuenta</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav brand">
+                <li class="brand-txt">
+                    <h5 class="brand-title">Bot zilla</h5>
+                    <div class="brand-subtitle">Grupo 4 | PIS</div>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="{% url 'app' %}" class="nav-link">APP</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'estadisticas'%}" class="nav-link">Estadisticas</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'account:login' %}" class="nav-link">Iniciar sesion</a>
+                </li>
+                <li class="nav-item last-item">
+                    <a href="{% url 'account:register' %}" class="nav-link">Registrase</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        #myChart {
+            max-width: 600px;
+            max-height: 400px;
+        }
+    </style>
+</head>
+<body>
+<h1>Información de datos estadisticos de peso de materiales</h1>
+<p>Esta es la información detallada para el tercer elemento.</p>
+<canvas id="myChart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Orgánica', 'Plástico', 'Metal', 'Papel', 'Vidrio'],
+            datasets: [{
+                label: 'Peso de Basura (g)',
+                data: [12, 19, 3, 5, 2],
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 205, 86, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(153, 102, 255, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 205, 86, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(153, 102, 255, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+<a href="index.html">Volver</a>
+
+
+</body>
+<script src="{% static 'assets/vendors/jquery/jquery-3.4.1.js' %}"></script>
+<script src="{% static 'assets/vendors/bootstrap/bootstrap.bundle.js' %}"></script>
+
+<!-- bootstrap 3 affix -->
+<script src="{% static 'assets/vendors/bootstrap/bootstrap.affix.js' %}"></script>
+
+<!-- Isotope -->
+<script src="{% static 'assets/vendors/isotope/isotope.pkgd.js' %}"></script>
+
+<!-- Google maps -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+
+<!-- JohnDoe js -->
+<script src="{% static 'assets/js/johndoe.js' %}"></script>
+</html>

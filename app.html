@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Comienza tu desarrollo con la página de aterrizaje de JohnDoe.">
+    <meta name="author" content="Devcrud">
+    <title>Página de aterrizaje de JohnDoe | Página de aterrizaje gratuita de Bootstrap 4.3.x</title>
+
+    {% load static %}
+    <!-- Font icons -->
+    <link rel="stylesheet" href="{% static 'assets/vendors/themify-icons/css/themify-icons.css' %}">
+    <!-- Bootstrap + JohnDoe main styles -->
+    <link rel="stylesheet" href="{% static 'assets/css/johndoe.css' %}">
+    <!-- Estilos adicionales -->
+    <link rel="stylesheet" href="{% static 'assets/css/app.css' %}">
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white" data-spy="affix" data-offset-top="510">
+    <div class="container">
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse mt-sm-20 navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="{% url 'home'%}" class="nav-link"> Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'about'%}" class="nav-link">Materiales</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'user'%}" class="nav-link">Mi cuenta</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav brand">
+                <li class="brand-txt">
+                    <h5 class="brand-title">Bot zilla</h5>
+                    <div class="brand-subtitle">Grupo 4 | PIS</div>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="{% url 'app' %}" class="nav-link">APP</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'estadisticas'%}" class="nav-link">Estadisticas</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'account:login' %}" class="nav-link">Iniciar sesion</a>
+                </li>
+                <li class="nav-item last-item">
+                    <a href="{% url 'account:register' %}" class="nav-link">Registrase</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<div class="control-panel">
+    <!-- Contenedor de video -->
+    <div class="video-container">
+        <video id="video-source" width="729" height="" controls>
+            <source src="movie.mp4" type="video/mp4">
+            Tu navegador no admite la etiqueta de video.
+        </video>
+    </div>
+
+    <!-- Sliders para acelerar y dirección -->
+    <div class="sliders">
+        <div>
+            <label for="accelerate">Acelerar</label>
+            <input type="range" id="accelerate">
+        </div>
+        <div>
+            <label for="direccion">Dirección</label>
+            <input type="range" id="direccion">
+        </div>
+    </div>
+
+    <!-- Panel de visualización de mensajes -->
+    <div class="message-panel">
+        <p id="message">Mensaje</p>
+    </div>
+
+    <!-- Botón para cambiar al control de un brazo robótico -->
+    <button id="switch-control">Cambiar a control de brazo robótico</button>
+
+    <!-- Controles del brazo robótico -->
+    <div class="robot-arm-controls" style="display: none;">
+        <div>
+            <label for="advance">Avanzar</label>
+            <input type="range" id="advance">
+        </div>
+        <div>
+            <label for="rotate">Girar</label>
+            <input type="range" id="rotate">
+        </div>
+        <div>
+            <label for="open-close">Abrir/Cerrar</label>
+            <input type="range" id="open-close">
+        </div>
+        <div>
+            <label for="up-down">Arriba/Abajo</label>
+            <input type="range" id="up-down">
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="{% static 'assets/js/app.js' %}"></script>
+<script src="script.js"></script>
+<script src="{% static 'assets/vendors/jquery/jquery-3.4.1.js' %}"></script>
+<script src="{% static 'assets/vendors/bootstrap/bootstrap.bundle.js' %}"></script>
+<script src="{% static 'assets/vendors/bootstrap/bootstrap.affix.js' %}"></script>
+<script src="{% static 'assets/vendors/isotope/isotope.pkgd.js' %}"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+<script src="{% static 'assets/js/johndoe.js' %}"></script>
+
+</body>
+</html>
